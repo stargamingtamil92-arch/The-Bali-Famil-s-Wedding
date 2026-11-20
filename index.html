@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Bali Family Wedding Invitation | Dec 04, 2026</title>
+  <meta name="description" content="With love, joy, and blessings, we warmly invite you to the wedding ceremony of Virupakshappa & Deepa, Shivayogi & Chaitra, Danesh & Poornima, and Murgesh & Bhairavi on Friday, December 04, 2026 at 8:00 AM at S.P Grand Convention Hall, Guttal Road, Haveri." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --crimson-void: #170202;
+      --gold-cream: #FFF7D6;
+      --gold-bright: #F7CA63;
+      --gold-mid: #D4AF37;
+      /* Sheer transparent glass so bg-loop.mp4 shines right through */
+      --sheer-glass: rgba(32, 3, 3, 0.28);
+      --sheer-card: rgba(38, 4, 4, 0.34);
+      --sheer-border: rgba(247, 202, 99, 0.48);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--crimson-void);
+      color: var(--gold-cream);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Full-Screen Looping Background Video (Clear & Bright) */
+    .full-video-bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100dvh;
+      z-index: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 25%, #5C0A0A 0%, #170202 82%);
+    }
+
+    #loop-bg-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(1.06) saturate(1.1);
+    }
+
+    /* Ultra-Light Edge Vignette Only (Keeps Center Video Fully Visible) */
+    .video-scrim {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(18, 2, 2, 0.24) 0%, rgba(18, 2, 2, 0.12) 45%, rgba(18, 2, 2, 0.34) 100%),
+        radial-gradient(circle at center, transparent 48%, rgba(14, 1, 1, 0.42) 100%);
+    }
+
+    /* Continuous Top-to-Bottom Falling Flowers Canvas */
+    #flowers-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100dvh;
+      z-index: 25;
+      pointer-events: none;
+    }
+
+    /* Stage 1: Full-Screen Intro Video + Press Seal Gesture */
+    #intro-hero {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      background: #140101;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.75s ease, visibility 0.75s ease;
+    }
+
+    #intro-hero.dismissed {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-box {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      height: 100dvh;
+      overflow: hidden;
+      background: #140101;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 28px 20px 76px;
+      text-align: center;
+    }
+
+    #intro-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    #seal-gesture-layer {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    #seal-gesture-layer.hidden {
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
+    }
+
+    .royal-seal-btn {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      border: 2.5px solid var(--gold-bright);
+      background: radial-gradient(circle at 32% 28%, #A81616 0%, #4A0505 68%, #240202 100%);
+      box-shadow: 0 0 38px rgba(246, 200, 95, 0.65), inset 0 0 14px rgba(255, 245, 204, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      animation: sealPulse 2.1s infinite ease-in-out;
+    }
+
+    .royal-seal-btn::before {
+      content: "";
+      position: absolute;
+      inset: -11px;
+      border-radius: 50%;
+      border: 1.5px dashed var(--gold-bright);
+      animation: spinSlow 14s linear infinite;
+    }
+
+    .seal-crest {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.38rem;
+      font-weight: 900;
+      color: var(--gold-cream);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+    }
+
+    .seal-sub-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 2px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .touch-gesture {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .finger-pointer {
+      width: 34px;
+      height: 34px;
+      color: var(--gold-bright);
+      filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.85));
+      animation: fingerTap 1.4s infinite ease-in-out;
+    }
+
+    .press-seal-text {
+      font-family: 'Cinzel', serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-cream);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+    }
+
+    .press-seal-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--gold-bright);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+    }
+
+    .intro-top-controls {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 8;
+      display: flex;
+      gap: 8px;
+    }
+
+    .intro-ctrl-btn {
+      background: rgba(24, 2, 2, 0.55);
+      border: 1px solid rgba(246, 200, 95, 0.55);
+      color: var(--gold-cream);
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 7px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Main Transparent Invitation Layout */
+    .invitation-body {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 22px 16px 120px;
+    }
+
+    /* Crisp text readability over transparent video */
+    .crisp-shadow {
+      text-shadow: 0 2px 10px rgba(15, 1, 1, 0.95), 0 0 22px rgba(15, 1, 1, 0.85);
+    }
+
+    /* Hero Header (Floating Directly Over Video) */
+    .top-header {
+      text-align: center;
+      padding: 14px 10px 20px;
+    }
+
+    .om-ganesha-svg {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 8px;
+      filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.85));
+      animation: floatGentle 3.8s ease-in-out infinite;
+    }
+
+    .shloka-mantra {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold-bright);
+      margin-bottom: 10px;
+    }
+
+    .family-badge {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      padding: 6px 18px;
+      border-top: 1px solid var(--gold-bright);
+      border-bottom: 1px solid var(--gold-bright);
+      background: rgba(25, 2, 2, 0.25);
+      backdrop-filter: blur(2px);
+      margin-bottom: 12px;
+    }
+
+    .invite-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      line-height: 1.45;
+      color: #FFFFFF;
+      font-weight: 700;
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    /* Ornamental Divider */
+    .ornate-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 22px auto 16px;
+      width: 82%;
+    }
+
+    .ornate-divider span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+    }
+
+    .ornate-divider i {
+      font-style: normal;
+      color: var(--gold-bright);
+      font-size: 0.95rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Section Headings */
+    .section-wrap {
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    .section-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3.2px;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 4px;
+    }
+
+    .section-heading {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.28rem;
+      color: #FFFFFF;
+      letter-spacing: 1.2px;
+    }
+
+    .section-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.06rem;
+      color: var(--gold-cream);
+      margin-top: 4px;
+      margin-bottom: 14px;
+    }
+
+    /* Sheer Transparent Glass Card Base */
+    .glass-panel {
+      background: var(--sheer-glass);
+      border: 1px solid var(--sheer-border);
+      border-radius: 22px;
+      backdrop-filter: blur(2.5px);
+      -webkit-backdrop-filter: blur(2.5px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 0 16px rgba(247, 202, 99, 0.08);
+    }
+
+    /* Interactive Couple Filter Tabs */
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .filter-pill {
+      background: rgba(25, 2, 2, 0.32);
+      border: 1px solid rgba(247, 202, 99, 0.42);
+      color: var(--gold-cream);
+      font-family: 'Cinzel', serif;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(2px);
+      transition: all 0.25s ease;
+    }
+
+    .filter-pill.active {
+      background: var(--gold-bright);
+      color: var(--crimson-void);
+      border-color: var(--gold-bright);
+    }
+
+    /* Four Couples Cards (Transparent Glass) */
+    .couples-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .couple-card {
+      position: relative;
+      background: var(--sheer-card);
+      border: 1.25px solid var(--sheer-border);
+      border-radius: 22px;
+      padding: 18px 14px 15px;
+      backdrop-filter: blur(2.5px);
+      -webkit-backdrop-filter: blur(2.5px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(22px);
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease, border-color 0.3s ease;
+    }
+
+    .couple-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .couple-card.hidden-by-filter {
+      display: none;
+    }
+
+    .couple-card:hover,
+    .couple-card:active {
+      border-color: var(--gold-bright);
+      transform: translateY(-2px) scale(1.012);
+    }
+
+    .couple-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -130%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 247, 214, 0.2), transparent);
+      transform: skewX(-22deg);
+      animation: goldSweep 6s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    .couple-card:nth-child(2)::before { animation-delay: 1.5s; }
+    .couple-card:nth-child(3)::before { animation-delay: 3s; }
+    .couple-card:nth-child(4)::before { animation-delay: 4.5s; }
+
+    .couple-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 6px;
+    }
+
+    .partner-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.26rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.9px;
+      line-height: 1.25;
+      text-shadow: 0 2px 10px rgba(10, 0, 0, 0.95), 0 0 18px rgba(10, 0, 0, 0.8);
+    }
+
+    .union-symbol {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin: 4px auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-cream), var(--gold-mid));
+      color: var(--crimson-void);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-weight: 700;
+      font-style: italic;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    .couple-blessing-verse {
+      margin-top: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--gold-cream);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+    }
+
+    .blessing-bar {
+      margin-top: 10px;
+      padding-top: 9px;
+      border-top: 1px dashed rgba(247, 202, 99, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: #FFFFFF;
+    }
+
+    .blessing-chip {
+      background: rgba(247, 202, 99, 0.22);
+      border: 1px solid rgba(247, 202, 99, 0.55);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
+
+    /* Date Reveal & Countdown Card */
+    .date-box {
+      padding: 18px 15px;
+    }
+
+    .reveal-stage {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(247, 202, 99, 0.55);
+      background: rgba(48, 5, 5, 0.42);
+      padding: 20px 14px;
+      min-height: 132px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .date-day {
+      font-family: 'Cinzel', serif;
+      font-size: 0.88rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      font-weight: 700;
+    }
+
+    .date-main {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 4px 0;
+      letter-spacing: 1px;
+    }
+
+    .date-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.28rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold-cream);
+    }
+
+    .seal-curtain {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184, 137, 38, 0.94) 0%, rgba(246, 200, 95, 0.96) 50%, rgba(166, 121, 27, 0.94) 100%);
+      color: var(--crimson-void);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity 0.55s ease, transform 0.55s ease;
+      padding: 12px;
+    }
+
+    .seal-curtain.unlocked {
+      opacity: 0;
+      transform: scale(1.06);
+      pointer-events: none;
+    }
+
+    .curtain-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.04rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .curtain-sub {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-top: 5px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .time-tile {
+      background: rgba(25, 2, 2, 0.36);
+      border: 1px solid rgba(247, 202, 99, 0.42);
+      border-radius: 14px;
+      padding: 11px 4px;
+    }
+
+    .time-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.24rem;
+      font-weight: 900;
+      color: var(--gold-bright);
+      line-height: 1.1;
+    }
+
+    .time-unit {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 1.4px;
+      color: #FFFFFF;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .calendar-btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-bright);
+      background: rgba(247, 202, 99, 0.22);
+      color: #FFFFFF;
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* Ceremony Timeline Section */
+    .timeline-box {
+      padding: 18px 16px;
+      text-align: left;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 22px;
+      padding-bottom: 16px;
+      border-left: 1.5px solid rgba(247, 202, 99, 0.48);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -6.5px;
+      top: 3px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gold-bright);
+      box-shadow: 0 0 10px var(--gold-bright);
+    }
+
+    .timeline-time {
+      font-family: 'Cinzel', serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+    }
+
+    .timeline-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.02rem;
+      color: #FFFFFF;
+      margin: 2px 0;
+    }
+
+    .timeline-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--gold-cream);
+      line-height: 1.35;
+    }
+
+    /* Venue Card (Strictly S.P Grand Convention Hall, Guttal Road, Haveri) */
+    .venue-card {
+      padding: 20px 16px;
+    }
+
+    .venue-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.18rem;
+      color: var(--gold-bright);
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .venue-address {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      color: #FFFFFF;
+      font-weight: 600;
+      margin-top: 4px;
+      margin-bottom: 14px;
+    }
+
+    .map-frame-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(247, 202, 99, 0.5);
+      height: 190px;
+      background: rgba(25, 2, 2, 0.4);
+    }
+
+    .map-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .venue-actions {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .maps-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #F6C85F 0%, #D4AF37 60%, #A98020 100%);
+      color: var(--crimson-void);
+      font-family: 'Cinzel', serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .copy-btn {
+      padding: 12px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(247, 202, 99, 0.58);
+      background: rgba(25, 2, 2, 0.35);
+      color: #FFFFFF;
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* Interactive Guest Wishes & RSVP Wall */
+    .wishes-box {
+      padding: 18px 15px;
+      text-align: left;
+    }
+
+    .wish-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .wish-input,
+    .wish-select,
+    .wish-textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 12px;
+      border: 1px solid rgba(247, 202, 99, 0.45);
+      background: rgba(20, 2, 2, 0.42);
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .wish-input::placeholder,
+    .wish-textarea::placeholder {
+      color: rgba(255, 247, 214, 0.65);
+    }
+
+    .wish-select option {
+      background: #2B0303;
+      color: #FFF7D6;
+    }
+
+    .wish-submit-btn {
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #F6C85F 0%, #D4AF37 100%);
+      color: var(--crimson-void);
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .wishes-feed {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .wish-card {
+      background: rgba(20, 2, 2, 0.34);
+      border: 1px solid rgba(247, 202, 99, 0.3);
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+
+    .wish-author {
+      font-family: 'Cinzel', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
+
+    .wish-couple-tag {
+      font-size: 0.68rem;
+      color: var(--gold-cream);
+      opacity: 0.85;
+      margin-bottom: 3px;
+    }
+
+    .wish-msg {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      color: #FFFFFF;
+      line-height: 1.35;
+    }
+
+    /* Creator Instagram Credit (@verveinvites) */
+    .creator-footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(247, 202, 99, 0.32);
+      text-align: center;
+    }
+
+    .creator-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .insta-creator-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: rgba(25, 2, 2, 0.42);
+      border: 1px solid rgba(247, 202, 99, 0.58);
+      color: #FFFFFF;
+      font-family: 'Cinzel', serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      backdrop-filter: blur(3px);
+      transition: transform 0.2s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .insta-creator-link:hover,
+    .insta-creator-link:active {
+      background: rgba(247, 202, 99, 0.25);
+      border-color: var(--gold-bright);
+      transform: translateY(-1px);
+    }
+
+    .insta-creator-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--gold-bright);
+    }
+
+    /* Floating Bottom Dock */
+    .floating-dock {
+      position: fixed;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 35;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(22, 2, 2, 0.68);
+      border: 1px solid rgba(247, 202, 99, 0.55);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      width: max-content;
+      max-width: calc(100vw - 24px);
+    }
+
+    .dock-btn {
+      background: rgba(247, 202, 99, 0.16);
+      border: 1px solid rgba(247, 202, 99, 0.42);
+      color: #FFFFFF;
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .dock-btn.active {
+      background: var(--gold-bright);
+      color: var(--crimson-void);
+      border-color: var(--gold-bright);
+    }
+
+    @keyframes sealPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 28px rgba(246, 200, 95, 0.48); }
+      50% { transform: scale(1.05); box-shadow: 0 0 44px rgba(246, 200, 95, 0.8); }
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fingerTap {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-6px) scale(0.92); }
+    }
+
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes goldSweep {
+      0%, 72% { left: -130%; }
+      100% { left: 160%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Stage 1: Full-Screen Intro Video + Press Seal Gesture -->
+  <section id="intro-hero" aria-label="Wedding Intro Video">
+    <div class="intro-box">
+      <div class="intro-top-controls">
+        <button type="button" class="intro-ctrl-btn" onclick="replayIntro()">Replay</button>
+        <button type="button" class="intro-ctrl-btn" onclick="enterInvitation()">Skip</button>
+      </div>
+
+      <video id="intro-video" playsinline preload="metadata">
+        <source src="assets/intro.mp4" type="video/mp4" />
+      </video>
+
+      <div id="seal-gesture-layer">
+        <button type="button" class="royal-seal-btn" onclick="pressSealToPlay()" aria-label="Press Seal to Play Video">
+          <span class="seal-crest">BALI</span>
+          <span class="seal-sub-tag">Royal Seal</span>
+        </button>
+
+        <div class="touch-gesture" onclick="pressSealToPlay()">
+          <svg class="finger-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 11V6a2 2 0 0 0-4 0v5" />
+            <path d="M14 10V4a2 2 0 0 0-4 0v2" />
+            <path d="M10 10.5V6a2 2 0 0 0-4 0v8" />
+            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+          </svg>
+          <div class="press-seal-text">Press the Seal</div>
+          <div class="press-seal-sub">Touch to play video &amp; music</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage 2: Full-Screen Looping Background Video -->
+  <div class="full-video-bg" aria-hidden="true">
+    <video id="loop-bg-video" autoplay loop muted playsinline preload="auto">
+      <source src="assets/bg-loop.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="video-scrim" aria-hidden="true"></div>
+
+  <!-- Background Music Audio -->
+  <audio id="bgm-audio" src="assets/bgm.mp3" loop preload="auto"></audio>
+
+  <!-- Continuous Top-to-Bottom Falling Flowers Canvas -->
+  <canvas id="flowers-canvas" aria-hidden="true"></canvas>
+
+  <!-- Main Transparent Invitation Content -->
+  <main class="invitation-body" id="invitation-content">
+
+    <!-- Top Blessing & Host Header -->
+    <header class="top-header">
+      <svg class="om-ganesha-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="50" r="45" stroke="#F7CA63" stroke-width="2" stroke-dasharray="4 3" />
+        <circle cx="50" cy="50" r="39" stroke="#D4AF37" stroke-width="1.2" />
+        <path d="M50 22C38 22 30 30 30 41C30 47 33 52 38 55C34 59 33 66 37 72C41 77 49 78 55 75C62 72 67 64 67 55C67 47 62 42 56 42C51 42 48 45 48 49C48 52 50 54 53 54" stroke="#F7CA63" stroke-width="2.6" stroke-linecap="round" />
+        <circle cx="43" cy="39" r="2.2" fill="#FFF7D6" />
+        <path d="M50 15V22M36 25L41 30M64 25L59 30" stroke="#F7CA63" stroke-width="2" stroke-linecap="round" />
+      </svg>
+
+      <div class="shloka-mantra crisp-shadow">|| Sri Ganeshaya Namah ||</div>
+      <div class="family-badge crisp-shadow">The Bali Family</div>
+      <p class="invite-statement crisp-shadow">
+        With love, joy, and blessings, we warmly invite you to the auspicious wedding ceremony of
+      </p>
+    </header>
+
+    <div class="ornate-divider"><span></span><i>✦</i><span></span></div>
+
+    <!-- Four Couples Section -->
+    <section class="section-wrap" aria-label="Couples">
+      <div class="section-eyebrow crisp-shadow">Sacred Union</div>
+      <h1 class="section-heading crisp-shadow">Four Royal Couples</h1>
+      <p class="section-subtitle crisp-shadow">Select a couple or tap any card to shower petals &amp; bless</p>
+
+      <div class="filter-pills" role="tablist" aria-label="Filter Couples">
+        <button type="button" class="filter-pill active" onclick="filterCouples('all', this)">All 4 Couples</button>
+        <button type="button" class="filter-pill" onclick="filterCouples('0', this)">Virupakshappa</button>
+        <button type="button" class="filter-pill" onclick="filterCouples('1', this)">Shivayogi</button>
+        <button type="button" class="filter-pill" onclick="filterCouples('2', this)">Danesh</button>
+        <button type="button" class="filter-pill" onclick="filterCouples('3', this)">Murgesh</button>
+      </div>
+
+      <div class="couples-list">
+        <article class="couple-card" data-couple="0" onclick="sendBlessing(this, 0)">
+          <div class="couple-tag crisp-shadow">Couple I</div>
+          <div class="partner-name">Virupakshappa</div>
+          <div class="union-symbol">&amp;</div>
+          <div class="partner-name">Deepa</div>
+          <div class="couple-blessing-verse">“Two souls united in grace, devotion, and lifelong harmony.”</div>
+          <div class="blessing-bar crisp-shadow">
+            <span>Tap to Shower Blessings</span>
+            <span class="blessing-chip">🌸 <span class="bless-count">11</span></span>
+          </div>
+        </article>
+
+        <article class="couple-card" data-couple="1" onclick="sendBlessing(this, 1)">
+          <div class="couple-tag crisp-shadow">Couple II</div>
+          <div class="partner-name">Shivayogi</div>
+          <div class="union-symbol">&amp;</div>
+          <div class="partner-name">Chaitra</div>
+          <div class="couple-blessing-verse">“Bound by sacred vows, laughter, and cherished family traditions.”</div>
+          <div class="blessing-bar crisp-shadow">
+            <span>Tap to Shower Blessings</span>
+            <span class="blessing-chip">🌸 <span class="bless-count">11</span></span>
+          </div>
+        </article>
+
+        <article class="couple-card" data-couple="2" onclick="sendBlessing(this, 2)">
+          <div class="couple-tag crisp-shadow">Couple III</div>
+          <div class="partner-name">Danesh</div>
+          <div class="union-symbol">&amp;</div>
+          <div class="partner-name">Poornima</div>
+          <div class="couple-blessing-verse">“Beginning a radiant journey of love, trust, and togetherness.”</div>
+          <div class="blessing-bar crisp-shadow">
+            <span>Tap to Shower Blessings</span>
+            <span class="blessing-chip">🌸 <span class="bless-count">11</span></span>
+          </div>
+        </article>
+
+        <article class="couple-card" data-couple="3" onclick="sendBlessing(this, 3)">
+          <div class="couple-tag crisp-shadow">Couple IV</div>
+          <div class="partner-name">Murgesh</div>
+          <div class="union-symbol">&amp;</div>
+          <div class="partner-name">Bhairavi</div>
+          <div class="couple-blessing-verse">“Walking hand in hand toward a future blessed with joy and prosperity.”</div>
+          <div class="blessing-bar crisp-shadow">
+            <span>Tap to Shower Blessings</span>
+            <span class="blessing-chip">🌸 <span class="bless-count">11</span></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="ornate-divider"><span></span><i>✦</i><span></span></div>
+
+    <!-- Date Reveal & Countdown Section -->
+    <section class="section-wrap" aria-label="Wedding Date and Countdown">
+      <div class="section-eyebrow crisp-shadow">Auspicious Muhurtham</div>
+      <h2 class="section-heading crisp-shadow">Save The Date</h2>
+      <p class="section-subtitle crisp-shadow">Tap the golden seal to unveil the wedding date &amp; time</p>
+
+      <div class="glass-panel date-box">
+        <div class="reveal-stage">
+          <div class="date-day crisp-shadow">Friday</div>
+          <div class="date-main crisp-shadow">December 04, 2026</div>
+          <div class="date-time crisp-shadow">At 8:00 AM</div>
+
+          <div class="seal-curtain" id="date-curtain" onclick="revealWeddingDate()">
+            <div class="curtain-title">Tap to Reveal Date</div>
+            <div class="curtain-sub">Auspicious Ceremony</div>
+          </div>
+        </div>
+
+        <div class="countdown-grid" id="countdown">
+          <div class="time-tile">
+            <div class="time-num crisp-shadow" id="cd-days">00</div>
+            <div class="time-unit crisp-shadow">Days</div>
+          </div>
+          <div class="time-tile">
+            <div class="time-num crisp-shadow" id="cd-hours">00</div>
+            <div class="time-unit crisp-shadow">Hours</div>
+          </div>
+          <div class="time-tile">
+            <div class="time-num crisp-shadow" id="cd-mins">00</div>
+            <div class="time-unit crisp-shadow">Minutes</div>
+          </div>
+          <div class="time-tile">
+            <div class="time-num crisp-shadow" id="cd-secs">00</div>
+            <div class="time-unit crisp-shadow">Seconds</div>
+          </div>
+        </div>
+
+        <button type="button" class="calendar-btn crisp-shadow" onclick="downloadCalendarInvite()">
+          Add to Calendar • Dec 04, 2026
+        </button>
+      </div>
+    </section>
+
+    <div class="ornate-divider"><span></span><i>✦</i><span></span></div>
+
+    <!-- Ceremony Schedule Section -->
+    <section class="section-wrap" aria-label="Wedding Schedule">
+      <div class="section-eyebrow crisp-shadow">Celebration Events</div>
+      <h2 class="section-heading crisp-shadow">Wedding Schedule</h2>
+      <p class="section-subtitle crisp-shadow">Friday, December 04, 2026</p>
+
+      <div class="glass-panel timeline-box">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-time crisp-shadow">7:30 AM</div>
+          <div class="timeline-title crisp-shadow">Mangala Vadya &amp; Welcome</div>
+          <div class="timeline-desc crisp-shadow">Traditional welcome of guests with sacred music and floral greetings.</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-time crisp-shadow">8:00 AM</div>
+          <div class="timeline-title crisp-shadow">Auspicious Muhurtham Ceremony</div>
+          <div class="timeline-desc crisp-shadow">Sacred wedding rituals and floral blessings for all four couples.</div>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-time crisp-shadow">11:30 AM Onwards</div>
+          <div class="timeline-title crisp-shadow">Grand Wedding Feast</div>
+          <div class="timeline-desc crisp-shadow">Traditional festive lunch served with love by the Bali Family.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornate-divider"><span></span><i>✦</i><span></span></div>
+
+    <!-- Venue Section (Strictly S.P Grand Convention Hall, Guttal Road, Haveri) -->
+    <section class="section-wrap" aria-label="Wedding Venue">
+      <div class="section-eyebrow crisp-shadow">Celebration Venue</div>
+      <h2 class="section-heading crisp-shadow">Venue Location</h2>
+      <p class="section-subtitle crisp-shadow">We look forward to welcoming you in person</p>
+
+      <div class="glass-panel venue-card">
+        <div class="venue-name crisp-shadow">S.P Grand Convention Hall</div>
+        <div class="venue-address crisp-shadow">Guttal Road, Haveri</div>
+
+        <div class="map-frame-wrap">
+          <iframe
+            title="S.P Grand Convention Hall, Guttal Road, Haveri Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=S.P+Grand+Convention+Hall,+Guttal+Road,+Haveri&output=embed">
+          </iframe>
+        </div>
+
+        <div class="venue-actions">
+          <a
+            class="maps-btn"
+            href="https://www.google.com/maps/search/?api=1&query=S.P+Grand+Convention+Hall,+Guttal+Road,+Haveri"
+            target="_blank"
+            rel="noopener noreferrer">
+            Open Google Maps
+          </a>
+          <button type="button" class="copy-btn crisp-shadow" id="copy-venue-btn" onclick="copyVenueAddress()">
+            Copy Address
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornate-divider"><span></span><i>✦</i><span></span></div>
+
+    <!-- Interactive Guest Blessings & RSVP Wall -->
+    <section class="section-wrap" aria-label="Guest Blessings and RSVP">
+      <div class="section-eyebrow crisp-shadow">Leave Your Wishes</div>
+      <h2 class="section-heading crisp-shadow">Blessings &amp; RSVP</h2>
+      <p class="section-subtitle crisp-shadow">Send your warm wishes to the couples &amp; the Bali Family</p>
+
+      <div class="glass-panel wishes-box">
+        <form class="wish-form" onsubmit="submitGuestWish(event)">
+          <input type="text" id="guest-name" class="wish-input" placeholder="Your Full Name" required />
+          <select id="guest-couple" class="wish-select">
+            <option value="All Four Couples">Blessing For: All Four Couples</option>
+            <option value="Virupakshappa & Deepa">Virupakshappa &amp; Deepa</option>
+            <option value="Shivayogi & Chaitra">Shivayogi &amp; Chaitra</option>
+            <option value="Danesh & Poornima">Danesh &amp; Poornima</option>
+            <option value="Murgesh & Bhairavi">Murgesh &amp; Bhairavi</option>
+          </select>
+          <textarea id="guest-message" class="wish-textarea" rows="2" placeholder="Write your wedding blessing or RSVP note..." required></textarea>
+          <button type="submit" class="wish-submit-btn">Post Blessing &amp; Shower Petals</button>
+        </form>
+
+        <div class="wishes-feed" id="wishes-feed">
+          <div class="wish-card">
+            <div class="wish-author">The Bali Family</div>
+            <div class="wish-couple-tag">For All Four Couples</div>
+            <div class="wish-msg crisp-shadow">Your presence and blessings will make this grand celebration complete!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creator Instagram Credit (@verveinvites) -->
+    <footer class="creator-footer">
+      <div class="creator-label crisp-shadow">Digital Invitation Crafted By</div>
+      <a
+        class="insta-creator-link crisp-shadow"
+        href="https://www.instagram.com/verveinvites"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit VerveInvites on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+        <span>@verveinvites</span>
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- Floating Bottom Dock -->
+  <nav class="floating-dock" aria-label="Quick Controls">
+    <button type="button" class="dock-btn" id="music-toggle-btn" onclick="toggleMusic()">
+      ♪ Music Off
+    </button>
+    <button type="button" class="dock-btn" onclick="triggerPetalBurst(45)">
+      ❀ Shower Petals
+    </button>
+    <button type="button" class="dock-btn" onclick="shareInvitation()">
+      Share
+    </button>
+  </nav>
+
+  <script>
+    const introHero = document.getElementById('intro-hero');
+    const introVideo = document.getElementById('intro-video');
+    const sealLayer = document.getElementById('seal-gesture-layer');
+    const loopBgVideo = document.getElementById('loop-bg-video');
+    const bgmAudio = document.getElementById('bgm-audio');
+    const musicBtn = document.getElementById('music-toggle-btn');
+
+    let isMusicPlaying = false;
+
+    function updateMusicButton() {
+      if (isMusicPlaying) {
+        musicBtn.textContent = '♪ Music On';
+        musicBtn.classList.add('active');
+      } else {
+        musicBtn.textContent = '♪ Music Off';
+        musicBtn.classList.remove('active');
+      }
+    }
+
+    function startBgm() {
+      bgmAudio.play().then(() => {
+        isMusicPlaying = true;
+        updateMusicButton();
+      }).catch(() => {
+        isMusicPlaying = false;
+        updateMusicButton();
+      });
+    }
+
+    function toggleMusic() {
+      if (isMusicPlaying) {
+        bgmAudio.pause();
+        isMusicPlaying = false;
+        updateMusicButton();
+      } else {
+        startBgm();
+      }
+    }
+
+    function pressSealToPlay() {
+      sealLayer.classList.add('hidden');
+      startBgm();
+      triggerPetalBurst(35);
+
+      const playPromise = introVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          enterInvitation();
+        });
+      }
+    }
+
+    introVideo.addEventListener('ended', () => {
+      enterInvitation();
+    });
+
+    introVideo.addEventListener('error', () => {
+      sealLayer.querySelector('.press-seal-sub').textContent = 'Tap to enter celebration';
+    });
+
+    function enterInvitation() {
+      introVideo.pause();
+      introHero.classList.add('dismissed');
+      loopBgVideo.play().catch(() => {});
+      if (!isMusicPlaying) {
+        startBgm();
+      }
+      triggerPetalBurst(40);
+      revealCardsOnScroll();
+    }
+
+    function replayIntro() {
+      introHero.classList.remove('dismissed');
+      sealLayer.classList.add('hidden');
+      introVideo.currentTime = 0;
+      introVideo.play().catch(() => {});
+    }
+
+    // Staggered Scroll Reveal for the 4 Couple Cards
+    const coupleCards = document.querySelectorAll('.couple-card');
+    function revealCardsOnScroll() {
+      coupleCards.forEach((card, idx) => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 20) {
+          setTimeout(() => card.classList.add('revealed'), idx * 110);
+        }
+      });
+    }
+    window.addEventListener('scroll', revealCardsOnScroll, { passive: true });
+    window.addEventListener('load', revealCardsOnScroll);
+
+    // Filter Couples Tabs
+    function filterCouples(target, btnEl) {
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      btnEl.classList.add('active');
+
+      coupleCards.forEach(card => {
+        if (target === 'all' || card.dataset.couple === target) {
+          card.classList.remove('hidden-by-filter');
+          card.classList.add('revealed');
+        } else {
+          card.classList.add('hidden-by-filter');
+        }
+      });
+      triggerPetalBurst(20);
+    }
+
+    // Interactive Blessings Counter per Couple
+    const blessingCounts = [11, 11, 11, 11];
+    function sendBlessing(cardEl, index) {
+      blessingCounts[index] += 1;
+      cardEl.querySelector('.bless-count').textContent = blessingCounts[index];
+      triggerPetalBurst(30);
+    }
+
+    // Interactive Date Reveal
+    function revealWeddingDate() {
+      const curtain = document.getElementById('date-curtain');
+      curtain.classList.add('unlocked');
+      triggerPetalBurst(50);
+    }
+
+    // Live Countdown Timer to Friday, December 04, 2026 at 8:00 AM IST
+    const targetDate = new Date('2026-12-04T08:00:00+05:30').getTime();
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = Math.max(0, targetDate - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Guest Blessings & RSVP Submission
+    function submitGuestWish(e) {
+      e.preventDefault();
+      const name = document.getElementById('guest-name').value.trim();
+      const couple = document.getElementById('guest-couple').value;
+      const msg = document.getElementById('guest-message').value.trim();
+      if (!name || !msg) return;
+
+      const feed = document.getElementById('wishes-feed');
+      const card = document.createElement('div');
+      card.className = 'wish-card';
+
+      const authorEl = document.createElement('div');
+      authorEl.className = 'wish-author';
+      authorEl.textContent = name;
+
+      const tagEl = document.createElement('div');
+      tagEl.className = 'wish-couple-tag';
+      tagEl.textContent = 'For ' + couple;
+
+      const msgEl = document.createElement('div');
+      msgEl.className = 'wish-msg crisp-shadow';
+      msgEl.textContent = msg;
+
+      card.appendChild(authorEl);
+      card.appendChild(tagEl);
+      card.appendChild(msgEl);
+      feed.prepend(card);
+
+      e.target.reset();
+      triggerPetalBurst(40);
+    }
+
+    // Download .ICS Calendar Event
+    function downloadCalendarInvite() {
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//VerveInvites//Bali Family Wedding//EN',
+        'BEGIN:VEVENT',
+        'DTSTART:20261204T023000Z',
+        'DTEND:20261204T063000Z',
+        'SUMMARY:The Bali Family Wedding Ceremony',
+        'DESCRIPTION:Wedding ceremony of Virupakshappa & Deepa, Shivayogi & Chaitra, Danesh & Poornima, and Murgesh & Bhairavi.',
+        'LOCATION:S.P Grand Convention Hall, Guttal Road, Haveri',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Bali-Family-Wedding-Dec-04-2026.ics';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Copy Venue Address
+    function copyVenueAddress() {
+      const address = 'S.P Grand Convention Hall, Guttal Road, Haveri';
+      const btn = document.getElementById('copy-venue-btn');
+      navigator.clipboard?.writeText(address).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = 'Copy Address'; }, 2200);
+      }).catch(() => {
+        btn.textContent = 'S.P Grand Hall';
+      });
+    }
+
+    // Share Invitation
+    function shareInvitation() {
+      const shareData = {
+        title: 'The Bali Family Wedding Invitation',
+        text: 'You are warmly invited to the wedding ceremony of Virupakshappa & Deepa, Shivayogi & Chaitra, Danesh & Poornima, and Murgesh & Bhairavi on Friday, Dec 04, 2026 at 8:00 AM at S.P Grand Convention Hall, Guttal Road, Haveri.',
+        url: window.location.href
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        navigator.clipboard?.writeText(window.location.href);
+        alert('Invitation link copied to clipboard!');
+      }
+    }
+
+    // Continuous Top-to-Bottom Falling Flowers Engine (60fps)
+    const canvas = document.getElementById('flowers-canvas');
+    const ctx = canvas.getContext('2d');
+    let petals = [];
+    const petalColors = [
+      'rgba(255, 179, 25, 0.9)',  // Marigold Gold
+      'rgba(255, 119, 15, 0.88)', // Saffron Marigold
+      'rgba(220, 38, 56, 0.86)',  // Crimson Rose
+      'rgba(255, 248, 225, 0.92)' // Jasmine Ivory
+    ];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function createPetal(startAtTop = false) {
+      return {
+        x: Math.random() * canvas.width,
+        y: startAtTop ? -20 - Math.random() * 80 : Math.random() * canvas.height,
+        size: 5 + Math.random() * 6.5,
+        speedY: 0.95 + Math.random() * 1.65,
+        swayAmp: 0.4 + Math.random() * 1.1,
+        swayFreq: 0.01 + Math.random() * 0.02,
+        phase: Math.random() * Math.PI * 2,
+        angle: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.04,
+        color: petalColors[Math.floor(Math.random() * petalColors.length)]
+      };
+    }
+
+    for (let i = 0; i < 45; i++) {
+      petals.push(createPetal(false));
+    }
+
+    function triggerPetalBurst(count = 35) {
+      for (let i = 0; i < count; i++) {
+        const p = createPetal(true);
+        p.speedY += 0.9;
+        petals.push(p);
+      }
+      if (petals.length > 160) {
+        petals.splice(0, petals.length - 160);
+      }
+    }
+
+    function animateFlowers() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < petals.length; i++) {
+        const p = petals[i];
+        p.y += p.speedY;
+        p.phase += p.swayFreq;
+        p.x += Math.sin(p.phase) * p.swayAmp;
+        p.angle += p.spin;
+
+        if (p.y > canvas.height + 24) {
+          if (petals.length > 48) {
+            petals.splice(i, 1);
+            i--;
+            continue;
+          } else {
+            p.y = -18;
+            p.x = Math.random() * canvas.width;
+          }
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.angle);
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.moveTo(0, -p.size);
+        ctx.bezierCurveTo(p.size * 0.85, -p.size * 0.4, p.size * 0.85, p.size * 0.6, 0, p.size);
+        ctx.bezierCurveTo(-p.size * 0.85, p.size * 0.6, -p.size * 0.85, -p.size * 0.4, 0, -p.size);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      requestAnimationFrame(animateFlowers);
+    }
+    animateFlowers();
+  </script>
+</body>
+</html>
